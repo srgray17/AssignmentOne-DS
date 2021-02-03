@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "header.h"
+#include <climits>
 
 int stackTop(struct stackNode* stack) {
-	if (stack->top == 0)
-		return NULL;
-	else
-		return stack->data;
+    if (isEmpty(stack))
+        return INT_MIN;
+    return stack->data;
 }

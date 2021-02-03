@@ -1,22 +1,16 @@
 #include <stdio.h>
+#include <climits>
 #include "header.h"
 
-int popStack(struct stackNode** stackNode) {
 
-    char res;
-    struct stackNode* top;
+int popStack(struct stackNode** root)
+{
+    if (isEmpty(*root))
+        return INT_MIN;
+    struct stackNode* temp = *root;
+    *root = (*root)->next;
+    int popped = temp->data;
+    free(temp);
 
-    if (*stackNode == NULL)
-    {
-        printf("Stack Empty \n");
-        exit(0);
-    }
-    else
-    {
-        top = *stackNode;
-        res = top->data;
-        *stackNode = top->next;
-        free(top);
-        return res;
-    }
+    return popped;
 }

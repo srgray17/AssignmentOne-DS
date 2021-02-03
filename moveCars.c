@@ -11,26 +11,13 @@ void moveCars() {
 	
 
 	while (true) {
-		char arrivalDeparture;
+		char arrivalDeparture[2];
 		char licence[7];
 		int moves = 0;
 		printf("\nEnter a or d with licence plate (ex. a qwe3r4): ");
-		scanf("%c %s", &arrivalDeparture, licence);
-		if (arrivalDeparture == 'a' || arrivalDeparture == 'd') {
-			if (arrivalDeparture == 'a') {
-				if (sizeof(s1) == 10) {
-					printf("Car lot is full");
-				}
-				else if (isEmpty(s1)) {
-					printf("The car has been parked");
-					pushStack(&s1, licence);
-				}
-				else if (sizeof(s1) < 10) {
-					printf("The car has been parked");
-					pushStack(&s1, licence);
-				}
-			}
-			if (arrivalDeparture == 'd') {
+		scanf("%s %s", arrivalDeparture, licence);
+		if (strcmp(arrivalDeparture, "a") || strcmp(arrivalDeparture, "d")) {
+			if (strcmp(arrivalDeparture, "a")) {
 				if (isEmpty(s1)) {
 					printf("Car lot is empty");
 				}
@@ -52,6 +39,19 @@ void moveCars() {
 				}
 				else {
 					printf("The car is not parked in the lot");
+				}
+			}
+			if (strcmp(arrivalDeparture, "d")) {
+				if (sizeof(s1) == 10) {
+					printf("Car lot is full");
+				}
+				else if (isEmpty(s1)) {
+					printf("The car has been parked");
+					pushStack(&s1, licence);
+				}
+				else if (sizeof(s1) < 10) {
+					printf("The car has been parked");
+					pushStack(&s1, licence);
 				}
 			}
 		}

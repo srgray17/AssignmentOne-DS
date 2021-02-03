@@ -7,10 +7,12 @@ typedef char StackEntry;
 
 struct stackNode
 {
-    int top;
-    StackEntry entry[MAXSTACK];
+    //int top;
+    /*StackEntry entry[MAXSTACK];*/
     char data;
     struct stackNode* next;
+    /*char data;
+    struct stackNode* next;*/
 };
 
 bool pushStack(struct stackNode** stack,
@@ -19,7 +21,6 @@ int popStack(struct stackNode** stack);
 bool isEmpty(struct stackNode* stack);
 void display(struct stackNode* stack);
 int stackTop(struct stackNode* stack);
-
 
 void* reverse(struct stackNode** stackNode);
 void decimalToHexidecimal(int value);

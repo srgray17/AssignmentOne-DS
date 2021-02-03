@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "header.h"
 
 bool isEmpty(struct stackNode* stackNode)

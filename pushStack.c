@@ -2,21 +2,26 @@
 #include "header.h"
 
 bool pushStack(struct stackNode** stackNode,
-    void* newData) {
+    void* data) {
 
-    struct stackNode* newNode =
-        (struct sNode*)malloc(sizeof(struct stackNode));
+    // allocate node 
+    struct stackNode* new_node =
+        (struct stackNode*)malloc(sizeof(struct stackNode));
 
-    if (newNode == NULL)
+    if (new_node == NULL)
     {
         printf("Stack overflow \n");
         exit(0);
     }
 
-    newNode->data = newData;
+    // put in the data  
+    new_node->data = data;
 
-    newNode->next = (*stackNode);
+    // link the old list  
+    // off the new node  
+    new_node->next = (*stackNode);
 
-
-    (*stackNode) = newNode;
+    // move the head to  
+    // point to the new node  
+    (*stackNode) = new_node;
 }

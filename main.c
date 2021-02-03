@@ -6,17 +6,16 @@
 int main() {
 	//problem 1
     struct sNode* stack = NULL;
-    pushStack(&stack, 10);
-    pushStack(&stack, 11);
-    pushStack(&stack, 12);
     pushStack(&stack, 13);
+    pushStack(&stack, 12);
+    pushStack(&stack, 11);
+    pushStack(&stack, 10);
 
     printf("List of integers in order");
     display(stack);
     reverse(&stack);
     printf("\n List of integers in reversed order ");
     display(stack);
-
 
     //problem 2
     decimalToHexidecimal(12);
@@ -27,3 +26,5 @@ int main() {
 
 	return 0;
 }
+
+
